@@ -11,10 +11,11 @@ RUN rm -rf node_modules && pnpm install --prefer-offline --no-frozen-lockfile
 COPY . .
 
 ENV NODE_ENV=development
+ENV PORT=3000
 ENV HOST=0.0.0.0
 ENV CHOKIDAR_USEPOLLING=true
 ENV CHOKIDAR_INTERVAL=100
 
-EXPOSE 5173
+EXPOSE 3000
 
 CMD ["node", "scripts/dev-supervisor.js"]
